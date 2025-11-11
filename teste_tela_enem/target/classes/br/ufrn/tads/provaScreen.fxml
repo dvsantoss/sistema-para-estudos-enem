@@ -34,10 +34,8 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.SubScene?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -45,24 +43,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controllers.TelaMenu">
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="511.0" prefWidth="680.0" VBox.vgrow="ALWAYS">
       <children>
-            <Pane layoutX="105.0" layoutY="200.0" opacity="0.91" prefHeight="262.0" prefWidth="597.0" style="-fx-background-color: #1475f5;">
+            <Pane layoutX="105.0" opacity="0.91" prefHeight="462.0" prefWidth="597.0" style="-fx-background-color: #1475f5;">
                <children>
                   <SubScene height="81.0" layoutX="54.0" layoutY="19.0" width="81.0">
                     <root>
                       <Region />
                     </root>
                   </SubScene>
-                  <SubScene height="81.0" layoutX="54.0" layoutY="110.0" width="81.0">
+                  <SubScene height="81.0" layoutX="54.0" layoutY="191.0" width="81.0">
                      <root>
                         <Region />
                      </root>
                   </SubScene>
-                  <SubScene height="81.0" layoutX="163.0" layoutY="110.0" width="81.0">
+                  <SubScene height="81.0" layoutX="163.0" layoutY="191.0" width="81.0">
                      <root>
                         <Region />
                      </root>
@@ -77,12 +76,12 @@
                         <Region />
                      </root>
                   </SubScene>
-                  <SubScene height="81.0" layoutX="277.0" layoutY="110.0" width="81.0">
+                  <SubScene height="81.0" layoutX="277.0" layoutY="191.0" width="81.0">
                      <root>
                         <Region />
                      </root>
                   </SubScene>
-                  <SubScene height="81.0" layoutX="389.0" layoutY="110.0" width="81.0">
+                  <SubScene height="81.0" layoutX="389.0" layoutY="191.0" width="81.0">
                      <root>
                         <Region />
                      </root>
@@ -92,7 +91,7 @@
                         <Region />
                      </root>
                   </SubScene>
-                  <SubScene height="81.0" layoutX="502.0" layoutY="110.0" width="81.0">
+                  <SubScene height="81.0" layoutX="502.0" layoutY="191.0" width="81.0">
                      <root>
                         <Region />
                      </root>
@@ -102,6 +101,21 @@
                         <Region />
                      </root>
                   </SubScene>
+                  <Label layoutX="58.0" layoutY="111.0" text="Enem 2023" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="167.0" layoutY="111.0" text="Enem 2022" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="281.0" layoutY="111.0" text="Enem 2021" textFill="WHITE">
+                     <font>
+                        <Font name="Ebrima" size="15.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane opacity="0.91" prefHeight="462.0" prefWidth="106.0" style="-fx-background-color: #1475f5;">
@@ -143,14 +157,6 @@
                   </ImageView>
                </children>
             </Pane>
-            <LineChart layoutX="148.0" layoutY="7.0" prefHeight="193.0" prefWidth="420.0">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </LineChart>
       </children>
     </AnchorPane>
   </children>
