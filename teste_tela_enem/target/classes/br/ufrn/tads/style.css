@@ -1,3 +1,48 @@
 #meuPane {
-  -fx-background-color: linear-gradient(from 0% 100% to 0% 0%, #044ba8 0%, #1475f5 100%);
+  -fx-background-color: linear-gradient(from 0% 100% to 0% 0%, #053e8a 0%, #1475f5 100%);
+}
+
+.meuPaneMenu {
+  -fx-background-color: linear-gradient(from 30% 100% to 0% 0%, #053e8a 0%, #1475f5 100%);
+}
+
+.meu-botao {
+    -fx-background-color: #CECECE;
+    -fx-text-fill: black;
+    -fx-background-radius: 6;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+}
+.meu-botao:hover {
+    -fx-background-color: #2b89ff;
+}
+
+.meu-botao:pressed {
+    -fx-effect: innershadow(gaussian, rgba(255,255,255,0.6), 10, 0.3, 0, 0);
+}
+
+
+.meu-botao-login {
+    -fx-background-color:  #1475f5;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+.meu-botao-login:hover {
+    -fx-background-color: #2b89ff;
+}
+
+.meu-botao-login:pressed {
+    -fx-effect: innershadow(gaussian, rgba(255,255,255,0.6), 10, 0.3, 0, 0);
+    -fx-background-color: gray;
+    -fx-text-fill: black;
+}
+
+.texto-limite-caracter-visible{
+    -fx-opacity: 0.86;
+}
+
+.texto-limite-caracter-invisible{
+    -fx-opacity: 0;
 }

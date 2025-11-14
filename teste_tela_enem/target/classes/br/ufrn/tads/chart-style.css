@@ -1,0 +1,85 @@
+.chart {
+    -fx-background-color: transparent;
+    -fx-padding: 15;
+}
+
+.chart-plot-background {
+    -fx-background-color: #f4f4f4; /* fundo escuro */
+    -fx-background-radius: 10;
+}
+
+.chart-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.axis {
+    -fx-tick-label-fill: #cccccc;
+    -fx-font-size: 11px;
+}
+
+.axis-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+/* Linhas de grade */
+.chart-horizontal-grid-lines, 
+.chart-vertical-grid-lines {
+    -fx-stroke: rgba(255, 255, 255, 0.08);
+}
+
+/* Eixo X e Y */
+.chart-vertical-zero-line,
+.chart-horizontal-zero-line {
+    -fx-stroke: rgba(255, 255, 255, 0.25);
+}
+
+/* Linha principal da série */
+.default-color0.chart-series-line {
+    -fx-stroke: #4FC3F7; /* azul claro */
+    -fx-stroke-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(79,195,247,0.4), 10, 0.3, 0, 0);
+}
+
+/* Ponto de dados */
+.default-color0.chart-line-symbol {
+    -fx-background-color: #4FC3F7, white;
+    -fx-background-radius: 6px;
+    -fx-padding: 3px;
+}
+
+/* Segunda linha  */
+.default-color1.chart-series-line {
+    -fx-stroke: #81C784; /* verde */
+    -fx-stroke-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(129,199,132,0.4), 10, 0.3, 0, 0);
+}
+
+.default-color1.chart-line-symbol {
+    -fx-background-color: #81C784, white;
+    -fx-background-radius: 6px;
+    -fx-padding: 3px;
+}
+
+
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.chart-legend-item-symbol {
+    -fx-background-radius: 3px;
+}
+
+.chart-legend-item {
+    -fx-text-fill: white;
+}
+
+
+.chart-line-symbol:hover {
+    -fx-scale-x: 1.5;
+    -fx-scale-y: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 10, 0.3, 0, 0);
+}
