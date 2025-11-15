@@ -7,12 +7,23 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+
+import java.io.IOException;
+
+import br.ufrn.tads.App;
 import br.ufrn.tads.servicy.InterfaceLogin;
 import br.ufrn.tads.servicy.imp.Login;
 
 public class loginController {
     private InterfaceLogin loginReq = new Login();
     private boolean loginStatus = false;
+
+
+    @FXML 
+    private Text preenchaTodos;
+
+    @FXML
+    private Text senhaOuLoginErrados;
 
     @FXML
     private Text LimiteCar;
@@ -49,22 +60,67 @@ public class loginController {
                 loginStatus=loginReq.loginRequest(login_campus.getText(),pass_campus.getText());
                 if(loginStatus){
                     System.out.println("Sucesso");
+                    try {
+                        App.setRoot("menuScreen");
+                    } catch (IOException e) {
+                        System.out.println("Erro na mudança de tela: "+e);
+                    }
                 }
                 else{
                     System.out.println("Senha ou Usuario Errados");
+                    LimiteCar.getStyleClass().removeAll(
+                    "Error-invisible",
+                    "Error-visible"
+                    );
+                    senhaOuLoginErrados.getStyleClass().removeAll(
+                        "Error-visible",
+                        "Error-invisible"
+                    );
+                    preenchaTodos.getStyleClass().removeAll(
+                        "Error-visible",
+                        "Error-invisible"
+                    );
+                    preenchaTodos.getStyleClass().add("Error-invisible");
+                    LimiteCar.getStyleClass().add("Error-invisible");
+                    senhaOuLoginErrados.getStyleClass().add("Error-visible");
                 }
             } catch (IndexOutOfBoundsException e) {
                 LimiteCar.getStyleClass().removeAll(
-                    "texto-limite-caracter-visible", 
-                    "texto-limite-caracter-invisible"
+                    "Error-invisible",
+                    "Error-visible"
                 );
-                LimiteCar.getStyleClass().add("texto-limite-caracter-visible");
-                System.out.println("Mais de 10 car");
+                senhaOuLoginErrados.getStyleClass().removeAll(
+                    "Error-visible",
+                    "Error-invisible"
+                );
+                preenchaTodos.getStyleClass().removeAll(
+                        "Error-visible",
+                        "Error-invisible"
+                    );
+                preenchaTodos.getStyleClass().add("Error-invisible");
+                senhaOuLoginErrados.getStyleClass().add("Error-invisible");
+                LimiteCar.getStyleClass().add("Error-visible");
+                System.out.println("Mais de 20 car");
             }
             
         }
         else{
-            System.out.println("Error");
+            System.out.println("Preencha Todos os campos");
+                    LimiteCar.getStyleClass().removeAll(
+                    "Error-invisible",
+                    "Error-visible"
+                    );
+                    senhaOuLoginErrados.getStyleClass().removeAll(
+                        "Error-visible",
+                        "Error-invisible"
+                    );
+                    preenchaTodos.getStyleClass().removeAll(
+                        "Error-visible",
+                        "Error-invisible"
+                    );
+                    LimiteCar.getStyleClass().add("Error-invisible");
+                    senhaOuLoginErrados.getStyleClass().add("Error-invisible");
+                    preenchaTodos.getStyleClass().add("Error-visible");
         }
     }
 

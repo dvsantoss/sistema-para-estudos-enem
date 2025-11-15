@@ -30,6 +30,8 @@ public class UserDao implements InterfaceDao{
             conn = DbConnection.getConnection();
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1, name.toString());
+            //verificando Entrada no banco
+            //System.out.println("conecção: "+preparedStatement);
             resultSet = preparedStatement.executeQuery();
 
             while(resultSet.next()){
@@ -41,6 +43,7 @@ public class UserDao implements InterfaceDao{
                 user.setQuest_certas(resultSet.getInt("quest_certas"));
                 user.setQuest_erradas(resultSet.getInt("quest_erradas"));
                 user.setQuest_feitas(resultSet.getInt("quest_feitas"));
+                System.out.println("output de valor:"+user);
             }
         } catch (Exception e) {
             e.printStackTrace();

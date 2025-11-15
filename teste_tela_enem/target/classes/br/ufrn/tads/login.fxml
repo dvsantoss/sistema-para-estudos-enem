@@ -64,7 +64,23 @@
             </cursor>
          </Text>
          <Button fx:id="login_btn" layoutX="416.0" layoutY="286.0" mnemonicParsing="false" onAction="#login" prefHeight="17.0" prefWidth="192.0" styleClass="meu-botao-login" stylesheets="@style.css" text="Entrar" />
-         <Text fx:id="LimiteCar" fill="RED" layoutX="384.0" layoutY="275.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="texto-limite-caracter-invisible" text="Não exceda o limite de 10 Caracteres" textAlignment="RIGHT" wrappingWidth="224.0">
+         <Text fx:id="LimiteCar" fill="RED" layoutX="390.0" layoutY="281.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Não exceda o limite de 20 Caracteres" textAlignment="RIGHT" wrappingWidth="224.0">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+         </Text>
+         <Text fx:id="senhaOuLoginErrados" fill="RED" layoutX="416.0" layoutY="280.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Login ou Senhas Errados" wrappingWidth="224.0">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+         </Text>
+         <Text fx:id="preenchaTodos" fill="RED" layoutX="416.0" layoutY="281.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Preencha todos os campos" wrappingWidth="224.0">
             <font>
                <Font name="Arial" size="12.0" />
             </font>

@@ -39,10 +39,11 @@
     -fx-text-fill: black;
 }
 
-.texto-limite-caracter-visible{
+.Error-visible{
     -fx-opacity: 0.86;
 }
 
-.texto-limite-caracter-invisible{
+.Error-invisible{
     -fx-opacity: 0;
 }
+

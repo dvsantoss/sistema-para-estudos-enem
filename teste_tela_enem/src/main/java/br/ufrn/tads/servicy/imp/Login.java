@@ -26,10 +26,15 @@ public class Login implements InterfaceLogin{
         this.senha = senha;
 
         user = userDao.findByName(login);
-        if(user.getName().equals(this.login) && user.getSenha().equals(this.senha)){
+        try {
+            if(user.getName().equals(this.login) && user.getSenha().equals(this.senha)){
             System.out.println("Logado");
             return true;
         }
+        } catch (Exception e) {
+            System.out.println("Usuario Não encontrado");
+        }
+        
         
         return false;
     }
