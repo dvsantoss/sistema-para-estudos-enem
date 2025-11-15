@@ -42,11 +42,12 @@ public class Login implements InterfaceLogin{
     @Override
     public void registerRequest(User user){
         if(userDao.save(user)){
-            System.out.println("Usuario Ja existe");
-            throw new IllegalArgumentException();
+            System.out.println("Usuario Criado Com Exito");
+            
         }
         else{
-            System.out.println("Usuario Criado Com Exito");
+            System.out.println("Usuario Ja existe");
+            throw new IllegalArgumentException();
         }
         
     }
