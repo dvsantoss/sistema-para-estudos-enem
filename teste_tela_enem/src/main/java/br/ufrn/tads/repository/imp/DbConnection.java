@@ -19,6 +19,7 @@ public class DbConnection {
             FileInputStream fis = new FileInputStream("varAmbiente/config.properties");
             props.load(fis);
 
+            // System.out.println(fis);
 
             this.senha = props.getProperty("db.password");
             this.user = props.getProperty("db.user");
