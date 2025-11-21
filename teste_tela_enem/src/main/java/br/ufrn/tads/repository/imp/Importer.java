@@ -22,11 +22,12 @@ public class Importer {
         try {
             //Ler 
             ObjectMapper mapper = new ObjectMapper();
-            File file = new File("prova_2022_com_topicos.json");
+            File file = new File("varAmbiente/prova_2022_com_topicos.json");
 
             Root root = mapper.readValue(file, Root.class);
 
             conn = dbConnection.getConnection();
+            conn.setAutoCommit(false); 
 
             for (Question q : root.questions) {
 

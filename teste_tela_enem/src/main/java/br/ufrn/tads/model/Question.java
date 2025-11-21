@@ -13,4 +13,8 @@ public class Question {
     public String correctAlternative;
     public List<Alternative> alternatives;
     public List<String> topicos;
+    public String alternativesIntroduction;
+    public int similarity_score;
+    public int matched_question_number;
+    public boolean is_manual_addition;
 }
