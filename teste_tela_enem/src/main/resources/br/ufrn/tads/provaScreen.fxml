@@ -48,7 +48,7 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="511.0" prefWidth="680.0" VBox.vgrow="ALWAYS">
       <children>
-            <Pane id="meuPane" layoutX="105.0" opacity="0.91" prefHeight="462.0" prefWidth="597.0" stylesheets="@style.css">
+            <Pane id="meuPane" layoutX="105.0" opacity="0.91" prefHeight="660.0" prefWidth="900.0" stylesheets="@style.css">
                <children>
                   <SubScene height="81.0" layoutX="54.0" layoutY="19.0" width="81.0">
                     <root>
@@ -100,11 +100,31 @@
                         <Region />
                      </root>
                   </SubScene>
+                  <SubScene height="81.0" layoutX="618.0" layoutY="110.0" width="81.0">
+                     <root>
+                        <Region />
+                     </root>
+                  </SubScene>
+                  <SubScene height="81.0" layoutX="618.0" layoutY="19.0" width="81.0">
+                     <root>
+                        <Region />
+                     </root>
+                  </SubScene>
+                  <SubScene height="81.0" layoutX="718.0" layoutY="110.0" width="81.0">
+                     <root>
+                        <Region />
+                     </root>
+                  </SubScene>
+                  <SubScene height="81.0" layoutX="718.0" layoutY="19.0" width="81.0">
+                     <root>
+                        <Region />
+                     </root>
+                  </SubScene>
                </children>
             </Pane>
             <Pane opacity="0.91" prefHeight="462.0" prefWidth="106.0" style="-fx-background-color: #1475f5;">
                <children>
-                <AnchorPane layoutY="2.0" minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="106.0" style="-fx-background-color: white; -fx-border-color: #1475f5;">
+                <AnchorPane layoutY="2.0" minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="106.0" style="-fx-background-color: white; -fx-border-color: #1475f5;">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-height: 30;">
                            <image>
@@ -116,7 +136,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="btn_provas" layoutX="6.0" layoutY="171.0" mnemonicParsing="false"  prefHeight="30.0" prefWidth="95.0" styleClass="meu-botao-ativado" stylesheets="@style.css" text="Provas">
+                        <Button fx:id="btn_provas" layoutX="6.0" layoutY="171.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" styleClass="meu-botao-ativado" stylesheets="@style.css" text="Provas">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>

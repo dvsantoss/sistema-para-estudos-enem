@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import br.ufrn.tads.App;
 import br.ufrn.tads.servicy.imp.*;
-public class TelaMenu {
+public class TelaMenuController {
 
 
     @FXML
@@ -56,7 +56,7 @@ public class TelaMenu {
     }
 
     @FXML
-    void questoes_screen(ActionEvent event) {
-
+    void questoes_screen(ActionEvent event)throws IOException {
+        App.setRoot("questoesScreen");
     }
 }

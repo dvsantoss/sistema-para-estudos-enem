@@ -51,8 +51,8 @@ public class ProvaController{
 
 
     @FXML
-    void questoes_screen(ActionEvent event) {
-
+    void questoes_screen(ActionEvent event)throws IOException {
+        App.setRoot("provaScreen");
     }
 
 }

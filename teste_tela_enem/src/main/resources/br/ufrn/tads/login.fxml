@@ -12,50 +12,37 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="523.0" prefWidth="742.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controllers.loginController">
-    <AnchorPane id="meuPane" prefHeight="523.0" prefWidth="742.0" style="meuPane: #1475f5;" stylesheets="@style.css">
+    <AnchorPane id="meuPane" prefHeight="660.0" prefWidth="900.0" style="meuPane: #1475f5;" stylesheets="@style.css">
       <children>
-         <SubScene height="542.0" layoutX="287.0" layoutY="-2.0" width="455.0">
+         <SubScene height="660.0" layoutX="450.0" width="455.0">
            <root>
              <Region />
            </root>
          </SubScene>
-         <PasswordField fx:id="pass_campus" layoutX="416.0" layoutY="212.0" prefHeight="25.0" prefWidth="192.0" promptText="password" />
-         <TextField fx:id="login_campus" layoutX="416.0" layoutY="154.0" prefHeight="25.0" prefWidth="192.0" promptText="login" style="-fx-border-width: 100;" />
-         <Text layoutX="447.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="87.423828125">
+         <PasswordField fx:id="pass_campus" layoutX="579.0" layoutY="214.0" prefHeight="25.0" prefWidth="192.0" promptText="password" />
+         <TextField fx:id="login_campus" layoutX="579.0" layoutY="156.0" prefHeight="25.0" prefWidth="192.0" promptText="login" style="-fx-border-width: 100;" />
+         <Text layoutX="610.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="87.423828125">
             <font>
                <Font name="Arial Bold" size="30.0" />
             </font>
          </Text>
-         <Text layoutX="416.0" layoutY="150.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="75.423828125">
+         <Text layoutX="579.0" layoutY="152.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="75.423828125">
             <font>
                <Font name="Arial" size="12.0" />
             </font>
          </Text>
-         <Text layoutX="416.0" layoutY="208.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="75.423828125">
+         <Text layoutX="579.0" layoutY="210.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="75.423828125">
             <font>
                <Font name="Arial" size="12.0" />
             </font>
          </Text>
-         <CheckBox layoutX="416.0" layoutY="243.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="1.0" />
-         <Text layoutX="438.0" layoutY="256.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Remember" wrappingWidth="75.423828125">
+         <CheckBox layoutX="579.0" layoutY="245.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="1.0" />
+         <Text layoutX="601.0" layoutY="258.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Remember" wrappingWidth="75.423828125">
             <font>
                <Font name="Arial" size="12.0" />
             </font>
          </Text>
-         <Text fx:id="ajuda_click" fill="#0051ff" layoutX="528.0" layoutY="256.0" onMouseClicked="#ajuda_screen" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda" textAlignment="RIGHT" wrappingWidth="75.423828125">
-            <font>
-               <Font name="Arial" size="12.0" />
-            </font>
-            <cursor>
-               <Cursor fx:constant="HAND" />
-            </cursor>
-         </Text>
-         <Text layoutX="416.0" layoutY="337.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Não tem uma conta?" wrappingWidth="141.423828125">
-            <font>
-               <Font name="Arial" size="12.0" />
-            </font>
-         </Text>
-         <Text fx:id="inscrever_click" fill="#0051ff" layoutX="529.0" layoutY="337.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Inscrever-se" textAlignment="RIGHT" wrappingWidth="73.423828125">
+         <Text fx:id="ajuda_click" fill="#0051ff" layoutX="691.0" layoutY="258.0" onMouseClicked="#ajuda_screen" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajuda" textAlignment="RIGHT" wrappingWidth="75.423828125">
             <font>
                <Font name="Arial" size="12.0" />
             </font>
@@ -63,8 +50,21 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Text>
-         <Button fx:id="login_btn" layoutX="416.0" layoutY="286.0" mnemonicParsing="false" onAction="#login" prefHeight="17.0" prefWidth="192.0" styleClass="meu-botao-login" stylesheets="@style.css" text="Entrar" />
-         <Text fx:id="LimiteCar" fill="RED" layoutX="390.0" layoutY="281.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Não exceda o limite de 20 Caracteres" textAlignment="RIGHT" wrappingWidth="224.0">
+         <Text layoutX="579.0" layoutY="339.0" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Não tem uma conta?" wrappingWidth="141.423828125">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+         </Text>
+         <Text fx:id="inscrever_click" fill="#0051ff" layoutX="692.0" layoutY="339.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" text="Inscrever-se" textAlignment="RIGHT" wrappingWidth="73.423828125">
+            <font>
+               <Font name="Arial" size="12.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Text>
+         <Button fx:id="login_btn" layoutX="579.0" layoutY="288.0" mnemonicParsing="false" onAction="#login" prefHeight="17.0" prefWidth="192.0" styleClass="meu-botao-login" stylesheets="@style.css" text="Entrar" />
+         <Text fx:id="LimiteCar" fill="RED" layoutX="550.0" layoutY="285.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Não exceda o limite de 20 Caracteres" textAlignment="RIGHT" wrappingWidth="224.0">
             <font>
                <Font name="Arial" size="12.0" />
             </font>
@@ -72,7 +72,7 @@
                <Cursor fx:constant="DEFAULT" />
             </cursor>
          </Text>
-         <Text fx:id="senhaOuLoginErrados" fill="RED" layoutX="416.0" layoutY="280.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Login ou Senhas Errados" wrappingWidth="224.0">
+         <Text fx:id="senhaOuLoginErrados" fill="RED" layoutX="576.0" layoutY="284.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Login ou Senhas Errados" wrappingWidth="224.0">
             <font>
                <Font name="Arial" size="12.0" />
             </font>
@@ -80,7 +80,7 @@
                <Cursor fx:constant="DEFAULT" />
             </cursor>
          </Text>
-         <Text fx:id="preenchaTodos" fill="RED" layoutX="416.0" layoutY="281.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Preencha todos os campos" wrappingWidth="224.0">
+         <Text fx:id="preenchaTodos" fill="RED" layoutX="576.0" layoutY="285.0" onMouseClicked="#inscrever" opacity="0.86" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Error-invisible" text="Preencha todos os campos" wrappingWidth="224.0">
             <font>
                <Font name="Arial" size="12.0" />
             </font>
