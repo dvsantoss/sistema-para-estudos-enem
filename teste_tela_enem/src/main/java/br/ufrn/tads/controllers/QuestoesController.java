@@ -14,9 +14,6 @@ public class QuestoesController {
     private Button btn_calendario;
 
     @FXML
-    private Button btn_cht;
-
-    @FXML
     private Button btn_cnt;
 
     @FXML
@@ -35,6 +32,9 @@ public class QuestoesController {
     private Button btn_questoes;
 
     @FXML
+    private Button cht;
+
+    @FXML
     private Text nomeUser;
 
     @FXML
@@ -48,17 +48,17 @@ public class QuestoesController {
     }
 
     @FXML
-    void cht_questions(ActionEvent event) {
+    void cht_function(ActionEvent event) {
 
     }
 
     @FXML
-    void cnt_questions(ActionEvent event) {
+    void cnt_function(ActionEvent event) {
 
     }
 
     @FXML
-    void lct_questions(ActionEvent event) {
+    void lct_function(ActionEvent event) {
 
     }
 
@@ -68,7 +68,7 @@ public class QuestoesController {
     }
 
     @FXML
-    void mt_questions(ActionEvent event) {
+    void mt_function(ActionEvent event) {
 
     }
 
