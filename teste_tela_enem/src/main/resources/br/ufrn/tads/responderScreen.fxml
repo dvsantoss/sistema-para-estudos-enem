@@ -21,7 +21,7 @@
                 <Font name="Arial" size="19.0" />
               </font>
             </Text>
-            <Text fx:id="index_question" layoutX="-2.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1)" wrappingWidth="45.0">
+            <Text fx:id="index_question" layoutX="2.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1)" wrappingWidth="45.0">
               <font>
                 <Font name="Arial" size="12.0" />
               </font>

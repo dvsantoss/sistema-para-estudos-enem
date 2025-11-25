@@ -47,6 +47,12 @@ public class ResponderController {
 
     @FXML 
     public void initialize() {
+
+        alternativaA.setOnAction(e -> desmarcarExceto(alternativaA));
+        alternativaB.setOnAction(e -> desmarcarExceto(alternativaB));
+        alternativaC.setOnAction(e -> desmarcarExceto(alternativaC));
+        alternativaD.setOnAction(e -> desmarcarExceto(alternativaD));
+        alternativaE.setOnAction(e -> desmarcarExceto(alternativaE));
         if(provaGeral)
             try {
 
@@ -83,7 +89,21 @@ public class ResponderController {
         }
     }
 
+
+        private void desmarcarExceto(CheckBox selecionada) {
+        if (selecionada != alternativaA) alternativaA.setSelected(false);
+        if (selecionada != alternativaB) alternativaB.setSelected(false);
+        if (selecionada != alternativaC) alternativaC.setSelected(false);
+        if (selecionada != alternativaD) alternativaD.setSelected(false);
+        if (selecionada != alternativaE) alternativaE.setSelected(false);
+    }
+
     private void mostrarQuestao(int idx) {
+        alternativaA.setSelected(false);
+        alternativaB.setSelected(false);
+        alternativaC.setSelected(false);
+        alternativaD.setSelected(false);
+        alternativaE.setSelected(false);
         if (questoes == null || idx < 0 || idx >= questoes.size()) {
             return;
         }
