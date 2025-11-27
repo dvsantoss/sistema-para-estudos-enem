@@ -3,11 +3,15 @@ package br.ufrn.tads.controllers;
 import br.ufrn.tads.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
 import br.ufrn.tads.servicy.imp.Login;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class QuestoesController {
 
@@ -58,6 +62,7 @@ public class QuestoesController {
 
     @FXML
     void cht_function(ActionEvent event)throws IOException {
+        showConfirmationDialog();
         ResponderController.setProvaGeral(false);
         ResponderController.setTemaAtual("ciencias-humanas");
         App.setRoot("responderScreen");
@@ -65,6 +70,7 @@ public class QuestoesController {
 
     @FXML
     void cnt_function(ActionEvent event)throws IOException {
+        showConfirmationDialog();
         ResponderController.setProvaGeral(false);
         ResponderController.setTemaAtual("ciencias-natureza");
         App.setRoot("responderScreen");
@@ -72,6 +78,7 @@ public class QuestoesController {
 
     @FXML
     void lct_function(ActionEvent event)throws IOException {
+        showConfirmationDialog();
         ResponderController.setProvaGeral(false);
         ResponderController.setTemaAtual("linguagens");
         App.setRoot("responderScreen");
@@ -84,6 +91,7 @@ public class QuestoesController {
 
     @FXML
     void mt_function(ActionEvent event)throws IOException {
+        showConfirmationDialog();
         ResponderController.setProvaGeral(false);
         ResponderController.setTemaAtual("matematica");
         App.setRoot("responderScreen");
@@ -97,6 +105,22 @@ public class QuestoesController {
     @FXML
     void questoes_screen(ActionEvent event) {
 
+    }
+
+    private void showConfirmationDialog() {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Dicas De Topicos");
+        alert.setHeaderText("Deseja Ser Informado De Qual é o Topico Da Questão?");
+        alert.setContentText("Ao clicar em OK, a ação será executada.");
+
+        // Mostra o diálogo e aguarda a resposta do usuário
+        Optional<ButtonType> result = alert.showAndWait();
+
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+                ResponderController.setAtivadoTopico(true);
+        } else {
+                ResponderController.setAtivadoTopico(false);
+            }
     }
 
 }

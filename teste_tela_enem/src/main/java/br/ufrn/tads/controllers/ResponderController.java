@@ -29,7 +29,7 @@ public class ResponderController {
     private int indexAtual = 0;
     private static boolean provaGeral = true;
     private static String temaAtual;
-
+    private static boolean isAtivadoTopico = false;
     @FXML
     private CheckBox alternativaA;
     @FXML
@@ -130,13 +130,17 @@ public class ResponderController {
 
 
         areaQuestao.getChildren().clear();
-        StringBuilder sb = new StringBuilder();
 
-        for(String top : q.getTopicos()){
-            sb.append(top).append("\n"); // quebra de linha opcional
+        if(isAtivadoTopico){
+            StringBuilder sb = new StringBuilder();
+
+            for(String top : q.getTopicos()){
+                sb.append(top).append("\n"); // quebra de linha opcional
+            }
+
+            topicosText.setText(sb.toString());
         }
-
-        topicosText.setText(sb.toString());
+        
 
         contexto.setText(q.getTitle());
         Text texto = new Text(q.getContext());
@@ -250,4 +254,16 @@ public class ResponderController {
             System.out.println(e.getMessage());
         }
     }
+
+
+    public static boolean isAtivadoTopico() {
+        return isAtivadoTopico;
+    }
+
+
+    public static void setAtivadoTopico(boolean isAtivadoTopico) {
+        ResponderController.isAtivadoTopico = isAtivadoTopico;
+    }
+
+    
 }

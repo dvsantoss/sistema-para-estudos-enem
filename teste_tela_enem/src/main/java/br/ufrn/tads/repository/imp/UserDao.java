@@ -2,6 +2,7 @@ package br.ufrn.tads.repository.imp;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.ufrn.tads.repository.*;
@@ -143,4 +144,52 @@ public class UserDao implements InterfaceDao<User>{
         }
         return false;
     }
+
+    public void salvarEstatisticaDiaria(User t) {
+    String sql = "INSERT INTO user_stats_daily (id_user, data, quest_feitas, quest_certas, quest_erradas) VALUES (?, CURRENT_DATE, ?, ?, ?) ON CONFLICT (id_user, data) DO UPDATE SET quest_feitas = user_stats_daily.quest_feitas + EXCLUDED.quest_feitas, quest_certas = user_stats_daily.quest_certas + EXCLUDED.quest_certas,quest_erradas = user_stats_daily.quest_erradas + EXCLUDED.quest_erradas;";
+
+    try (Connection conn = DbConnection.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+
+        ps.setLong(1, t.getId());
+        ps.setInt(2, t.getQuest_feitas());
+        ps.setInt(3, t.getQuest_certas());
+        ps.setInt(4, t.getQuest_erradas());
+
+        ps.executeUpdate();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+    public List<UserDailyStats> getEstatisticaDiaria(Long userId) {
+    List<UserDailyStats> lista = new ArrayList<>();
+
+    String sql = "SELECT data, quest_certas, quest_erradas FROM user_stats_daily WHERE id_user = ? ORDER BY data";
+
+    try (Connection conn = DbConnection.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+
+        ps.setLong(1, userId);
+
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            lista.add(new UserDailyStats(
+                rs.getDate("data").toLocalDate(),
+                rs.getInt("quest_certas"),
+                rs.getInt("quest_erradas")
+            ));
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return lista;
+}
+
+
+
+
 }

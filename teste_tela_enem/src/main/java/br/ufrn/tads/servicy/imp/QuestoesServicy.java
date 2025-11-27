@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.ufrn.tads.model.Question;
 import br.ufrn.tads.model.User;
+import br.ufrn.tads.model.UserDailyStats;
 import br.ufrn.tads.repository.imp.QuestionsDao;
 import br.ufrn.tads.repository.imp.UserDao;
 
@@ -97,9 +98,14 @@ public class QuestoesServicy {
         user.setQuest_erradas(questoes.size()-i);
         user.setQuest_feitas(questoes.size());
         userdao.update(user, null);
+        userdao.salvarEstatisticaDiaria(user);
         System.out.println("Acertos = "+i);
         System.out.println("Questoes erradas = "+ (questoes.size()-i));
         System.out.println("Questoes feitas total = "+(questoes.size()));
     }
     
+
+    public List<UserDailyStats> getInformacoesDeAcertoseErrosDiarios(User t){
+        return userdao.getEstatisticaDiaria(t.getId());
+    }
 }

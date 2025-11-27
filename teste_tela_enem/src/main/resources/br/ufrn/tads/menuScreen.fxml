@@ -168,7 +168,7 @@
                   </AnchorPane>
                </children>
             </Pane>
-            <LineChart layoutX="148.0" layoutY="7.0" prefHeight="277.0" prefWidth="585.0">
+            <LineChart fx:id="chartId" layoutX="148.0" layoutY="7.0" prefHeight="277.0" prefWidth="585.0">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
