@@ -3,12 +3,17 @@ package br.ufrn.tads.controllers;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import br.ufrn.tads.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -45,6 +50,8 @@ public class ResponderController {
     private Text contexto;
     @FXML
     private Text conteudo;
+    @FXML
+    private TextArea topicosText;
     @FXML
     private Text index_question;
     @FXML
@@ -118,10 +125,18 @@ public class ResponderController {
         q = questoes.get(idx);
         System.out.println(q.getFiles());
         System.out.println(q.getCorrectAlternative());
+        System.out.println(q.getTopicos());
         List<String> altAtual = q.getAlternativesDoBd();
 
 
         areaQuestao.getChildren().clear();
+        StringBuilder sb = new StringBuilder();
+
+        for(String top : q.getTopicos()){
+            sb.append(top).append("\n"); // quebra de linha opcional
+        }
+
+        topicosText.setText(sb.toString());
 
         contexto.setText(q.getTitle());
         Text texto = new Text(q.getContext());
@@ -177,8 +192,7 @@ public class ResponderController {
 
     @FXML
     void menu_screen(ActionEvent event) throws IOException {
-        App.setRoot("menuScreen");
-        qs.contagemDequestoes(questoes);
+        showConfirmationDialog();
     }
 
     public static boolean isProvaGeral() {
@@ -215,5 +229,25 @@ public class ResponderController {
         }
 
         return false;
+    }
+    private void showConfirmationDialog() {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Salvar Simulado");
+        alert.setHeaderText("Deseja Salvar Seu Resultado?");
+        alert.setContentText("Ao clicar em OK, a ação será executada.");
+
+        // Mostra o diálogo e aguarda a resposta do usuário
+        Optional<ButtonType> result = alert.showAndWait();
+        try {
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                App.setRoot("menuScreen");
+                qs.contagemDequestoes(questoes);
+            } else {
+                App.setRoot("menuScreen");
+            }
+        }catch (IOException e) {
+            // TODO: handle exception
+            System.out.println(e.getMessage());
+        }
     }
 }
