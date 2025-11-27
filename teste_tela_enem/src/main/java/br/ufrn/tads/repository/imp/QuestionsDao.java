@@ -4,6 +4,7 @@ import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class QuestionsDao implements InterfaceDao<Question>{
     @Override
     public Question findById(Long id) {
         Question question = null;
-        String sql = "SELECT q.id, q.index_number, q.discipline,q.Language,q.correct_alternative,q.year,q.title,q.context,array_agg(DISTINCT (a.letter || ' - ' || a.text)) AS alternativas,array_agg(DISTINCT t.topic_text) AS topicos FROM questions q LEFT JOIN alternatives a ON a.question_id = q.id LEFT JOIN topics t ON t.question_id = q.id WHERE q.index_number = ? GROUP BY q.id;";
+        String sql = "SELECT q.id, q.index_number, q.discipline,q.Language,q.correct_alternative,q.year,q.title,q.files,q.context,array_agg(DISTINCT (a.letter || ' - ' || a.text)) AS alternativas,array_agg(DISTINCT t.topic_text) AS topicos FROM questions q LEFT JOIN alternatives a ON a.question_id = q.id LEFT JOIN topics t ON t.question_id = q.id WHERE q.index_number = ? GROUP BY q.id;";
         Connection conn = null;
         
         PreparedStatement preparedStatement = null;
@@ -46,6 +47,15 @@ public class QuestionsDao implements InterfaceDao<Question>{
                 question.setYear(resultSet.getInt("year"));
                 question.setContext(resultSet.getString("context"));
                 question.setCorrectAlternative(resultSet.getString("correct_alternative"));
+
+                // files tablea
+                Array array = resultSet.getArray("files");
+                if (array != null) {
+                    String[] filesArray = (String[]) array.getArray();  // converte para string[]
+                    List<String> filesList = Arrays.asList(filesArray); // converte para List
+                    question.setFiles(filesList);
+                }
+
 
                 //files
                 // Array sqlArray1 = resultSet.getArray("topicos");
@@ -83,7 +93,7 @@ public class QuestionsDao implements InterfaceDao<Question>{
 
     public Question findByTema(String tema,Long id) {
         Question question = null;
-        String sql = "SELECT q.id, q.index_number, q.discipline,q.Language,q.correct_alternative,q.year,q.title,q.context,array_agg(DISTINCT (a.letter || ' - ' || a.text)) AS alternativas,array_agg(DISTINCT t.topic_text) AS topicos FROM questions q LEFT JOIN alternatives a ON a.question_id = q.id LEFT JOIN topics t ON t.question_id = q.id WHERE discipline = ? AND index_number = ? GROUP BY q.id;";
+        String sql = "SELECT q.id, q.index_number, q.discipline,q.Language,q.correct_alternative,q.year,q.title,q.files,q.context,array_agg(DISTINCT (a.letter || ' - ' || a.text)) AS alternativas,array_agg(DISTINCT t.topic_text) AS topicos FROM questions q LEFT JOIN alternatives a ON a.question_id = q.id LEFT JOIN topics t ON t.question_id = q.id WHERE discipline = ? AND index_number = ? GROUP BY q.id;";
         Connection conn = null;
         
         PreparedStatement preparedStatement = null;
@@ -108,23 +118,60 @@ public class QuestionsDao implements InterfaceDao<Question>{
                 question.setContext(resultSet.getString("context"));
                 question.setCorrectAlternative(resultSet.getString("correct_alternative"));
 
-                //files
-                // Array sqlArray1 = resultSet.getArray("topicos");
-                // String[] filesArray = (String[]) sqlArray1.getArray();
-                // List<String> files = Arrays.asList(filesArray);
-                // question.setFiles(files);
+                Array filesArray = resultSet.getArray("files");
+                if (filesArray != null) {
+                try {
+                    String[] filesArrayData = (String[]) filesArray.getArray();
+                    if (filesArrayData != null && filesArrayData.length > 0) {
+                        question.setFiles(Arrays.asList(filesArrayData));
+                    } else {
+                        question.setFiles(new ArrayList<>());
+                    }
+                } catch (Exception e) {
+                    System.err.println("Erro ao processar array de files: " + e.getMessage());
+                    question.setFiles(new ArrayList<>());
+                }
+            } else {
+                question.setFiles(new ArrayList<>());
+            }
 
-                //topicos
-                Array sqlArray2 = resultSet.getArray("topicos");
-                String[] topicsArray = (String[]) sqlArray2.getArray();
-                List<String> topics = Arrays.asList(topicsArray);
-                question.setTopicos(topics);
+            // topicos
+            Array sqlArray2 = resultSet.getArray("topicos");
+            if (sqlArray2 != null) {
+                try {
+                    String[] topicsArray = (String[]) sqlArray2.getArray();
+                    if (topicsArray != null && topicsArray.length > 0) {
+                        List<String> topics = Arrays.asList(topicsArray);
+                        question.setTopicos(topics);
+                    } else {
+                        question.setTopicos(new ArrayList<>());
+                    }
+                } catch (Exception e) {
+                    System.err.println("Erro ao processar array de tópicos: " + e.getMessage());
+                    question.setTopicos(new ArrayList<>());
+                }
+            } else {
+                question.setTopicos(new ArrayList<>());
+            }
 
-                //Alternativas
-                Array sqlArray3 = resultSet.getArray("alternativas");
-                String[] alternativasArray = (String[]) sqlArray3.getArray();
-                List<String> alternativas = Arrays.asList(alternativasArray);
-                question.setAlternativesDoBd(alternativas);
+            // alternativ
+            Array sqlArray3 = resultSet.getArray("alternativas");
+            if (sqlArray3 != null) {
+                try {
+                    String[] alternativasArray = (String[]) sqlArray3.getArray();
+                    if (alternativasArray != null && alternativasArray.length > 0) {
+                        List<String> alternativas = Arrays.asList(alternativasArray);
+                        question.setAlternativesDoBd(alternativas);
+                    } else {
+                        question.setAlternativesDoBd(new ArrayList<>());
+                    }
+                } catch (Exception e) {
+                    System.err.println("Erro ao processar array de alternativas: " + e.getMessage());
+                    question.setAlternativesDoBd(new ArrayList<>());
+                }
+            } else {
+                question.setAlternativesDoBd(new ArrayList<>());
+            }
                 
                 System.out.println("output de valor das questoes:"+question.getYear());
             }

@@ -9,6 +9,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import br.ufrn.tads.model.*;
 import br.ufrn.tads.servicy.imp.*;
@@ -44,7 +47,11 @@ public class ResponderController {
     private Text conteudo;
     @FXML
     private Text index_question;
-
+    @FXML
+    private ImageView imageDisplay;
+    @FXML
+    private VBox areaQuestao;
+    
     @FXML 
     public void initialize() {
 
@@ -109,12 +116,26 @@ public class ResponderController {
         }
 
         q = questoes.get(idx);
+        System.out.println(q.getFiles());
         System.out.println(q.getCorrectAlternative());
-        
-        contexto.setText(q.getTitle());
-        conteudo.setText(q.getContext());
         List<String> altAtual = q.getAlternativesDoBd();
-        
+
+
+        areaQuestao.getChildren().clear();
+
+        contexto.setText(q.getTitle());
+        Text texto = new Text(q.getContext());
+        texto.setWrappingWidth(480);
+        areaQuestao.getChildren().add(texto);
+
+        if (q.getFiles() != null && !q.getFiles().isEmpty()) {
+            for (String filePath : q.getFiles()) {
+                ImageView img = new ImageView(new Image(filePath));
+                img.setFitWidth(400);
+                img.setPreserveRatio(true);
+                areaQuestao.getChildren().add(img);
+            }
+        }
         if (altAtual != null && altAtual.size() >= 5) {
             alternativaA.setText(altAtual.get(0));
             alternativaB.setText(altAtual.get(1));

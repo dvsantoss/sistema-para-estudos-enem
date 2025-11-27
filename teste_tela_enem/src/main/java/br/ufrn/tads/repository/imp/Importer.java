@@ -32,7 +32,7 @@ public class Importer {
             for (Question q : root.questions) {
 
                 // inserir perguntas
-                String sqlQ = "INSERT INTO questions (index_number, title, discipline, language, year, context, correct_alternative) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id";
+                String sqlQ = "INSERT INTO questions (index_number, title, discipline, language, year, context, correct_alternative,files) VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING id";
 
                 PreparedStatement psQ = conn.prepareStatement(sqlQ);
                 psQ.setInt(1, q.getIndex());
@@ -42,6 +42,8 @@ public class Importer {
                 psQ.setInt(5, q.getYear());
                 psQ.setString(6, q.getContext());
                 psQ.setString(7, q.getCorrectAlternative());
+                psQ.setString(8, String.join(",", q.getFiles()));
+
 
                 ResultSet rs = psQ.executeQuery();
                 rs.next();
