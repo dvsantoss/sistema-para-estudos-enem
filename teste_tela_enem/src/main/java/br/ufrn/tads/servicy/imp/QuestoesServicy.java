@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufrn.tads.model.Question;
+import br.ufrn.tads.model.User;
 import br.ufrn.tads.repository.imp.QuestionsDao;
+import br.ufrn.tads.repository.imp.UserDao;
 
 public class QuestoesServicy {
     private List<Question> questoes= new ArrayList<>();
+    private User user;
+    private UserDao userdao = new UserDao();
     private QuestionsDao questionsDao = new QuestionsDao();
     private Question question = null;
 
@@ -79,6 +83,23 @@ public class QuestoesServicy {
             // TODO: handle exception
         }
         return null;
+    }
+
+    public void contagemDequestoes(List<Question> questoes){
+        int i = 0;
+        for(Question q:questoes){
+            if(q.isAcertouOuNao()){
+                i++;
+            }
+        }
+        user = Login.getUserAtual();
+        user.setQuest_certas(i);
+        user.setQuest_erradas(questoes.size()-i);
+        user.setQuest_feitas(questoes.size());
+        userdao.update(user, null);
+        System.out.println("Acertos = "+i);
+        System.out.println("Questoes erradas = "+ (questoes.size()-i));
+        System.out.println("Questoes feitas total = "+(questoes.size()));
     }
     
 }

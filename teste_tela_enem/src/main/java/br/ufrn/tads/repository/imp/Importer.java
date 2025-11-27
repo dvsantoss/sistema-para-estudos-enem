@@ -35,20 +35,20 @@ public class Importer {
                 String sqlQ = "INSERT INTO questions (index_number, title, discipline, language, year, context, correct_alternative) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id";
 
                 PreparedStatement psQ = conn.prepareStatement(sqlQ);
-                psQ.setInt(1, q.index);
-                psQ.setString(2, q.title);
-                psQ.setString(3, q.discipline);
-                psQ.setString(4, q.language);
-                psQ.setInt(5, q.year);
-                psQ.setString(6, q.context);
-                psQ.setString(7, q.correctAlternative);
+                psQ.setInt(1, q.getIndex());
+                psQ.setString(2, q.getTitle());
+                psQ.setString(3, q.getDiscipline());
+                psQ.setString(4, q.getLanguage());
+                psQ.setInt(5, q.getYear());
+                psQ.setString(6, q.getContext());
+                psQ.setString(7, q.getCorrectAlternative());
 
                 ResultSet rs = psQ.executeQuery();
                 rs.next();
                 int questionId = rs.getInt("id");
 
                 // Inserir alternativas
-                for (Alternative alt : q.alternatives) {
+                for (Alternative alt : q.getAlternatives()) {
                     String sqlA = "INSERT INTO alternatives (question_id, letter, text, is_correct) VALUES (?, ?, ?, ?)";
 
                     PreparedStatement psA = conn.prepareStatement(sqlA);
@@ -60,8 +60,8 @@ public class Importer {
                 }
 
                 // 5. Inserir tópicos (se existirem)
-                if (q.topicos != null) {
-                    for (String topic : q.topicos) {
+                if (q.getTopicos() != null) {
+                    for (String topic : q.getTopicos()) {
                         String sqlT = "INSERT INTO topics (question_id, topic_text) VALUES (?, ?)";
 
                         PreparedStatement psT = conn.prepareStatement(sqlT);

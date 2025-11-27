@@ -58,6 +58,7 @@ public class QuestionsDao implements InterfaceDao<Question>{
                 String[] topicsArray = (String[]) sqlArray2.getArray();
                 List<String> topics = Arrays.asList(topicsArray);
                 question.setTopicos(topics);
+                
 
                 //Alternativas
                 Array sqlArray3 = resultSet.getArray("alternativas");
@@ -65,7 +66,7 @@ public class QuestionsDao implements InterfaceDao<Question>{
                 List<String> alternativas = Arrays.asList(alternativasArray);
                 question.setAlternativesDoBd(alternativas);
                 
-                System.out.println("output de valor das questoes:"+question.year);
+                System.out.println("output de valor das questoes:"+question.getYear());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -125,7 +126,7 @@ public class QuestionsDao implements InterfaceDao<Question>{
                 List<String> alternativas = Arrays.asList(alternativasArray);
                 question.setAlternativesDoBd(alternativas);
                 
-                System.out.println("output de valor das questoes:"+question.year);
+                System.out.println("output de valor das questoes:"+question.getYear());
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -149,7 +150,7 @@ public class QuestionsDao implements InterfaceDao<Question>{
     @Override
     public boolean save(Question t) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        return false;
     }
 
     @Override

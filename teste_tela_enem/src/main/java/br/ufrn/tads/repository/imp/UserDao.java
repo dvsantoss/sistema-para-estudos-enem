@@ -113,6 +113,34 @@ public class UserDao implements InterfaceDao<User>{
     @Override
     public boolean update(User t, String[] params) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        String sql = "update usuario set quest_feitas = quest_feitas+ ? ,quest_certas = quest_certas+ ? ,quest_erradas = quest_erradas+ ? where id_user = ? ;";
+        Connection conn = null;
+        
+        PreparedStatement preparedStatement = null;
+
+        try {
+            conn = DbConnection.getConnection();
+            preparedStatement = conn.prepareStatement(sql);
+
+            preparedStatement.setInt(1, t.getQuest_feitas());
+            preparedStatement.setInt(2, t.getQuest_certas());
+            preparedStatement.setInt(3, t.getQuest_erradas());
+            preparedStatement.setLong(4, t.getId());
+            
+            preparedStatement.execute(); //it is not a query. It is an insert command
+            
+        } catch(Exception e) {
+            e.printStackTrace();
+        } finally {
+            // close all connections
+            try {
+                if (preparedStatement != null) preparedStatement.close();
+                if (conn != null) conn.close();
+                return true;
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
     }
 }

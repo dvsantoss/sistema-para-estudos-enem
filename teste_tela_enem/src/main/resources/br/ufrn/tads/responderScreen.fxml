@@ -26,18 +26,18 @@
                 <Font name="Arial" size="12.0" />
               </font>
             </Text>
-            <CheckBox fx:id="alternativaA" layoutX="20.0" layoutY="395.0" mnemonicParsing="false" text="Alternativa A" />
-            <CheckBox fx:id="alternativaB" layoutX="20.0" layoutY="436.0" mnemonicParsing="false" text="Alternativa B" />
-            <CheckBox fx:id="alternativaC" layoutX="20.0" layoutY="484.0" mnemonicParsing="false" text="Alternativa C" />
-            <CheckBox fx:id="alternativaD" layoutX="20.0" layoutY="525.0" mnemonicParsing="false" text="Alternativa D" />
-            <CheckBox fx:id="alternativaE" layoutX="20.0" layoutY="567.0" mnemonicParsing="false" text="Alternativa E" />
+            <CheckBox fx:id="alternativaA" layoutX="25.0" layoutY="451.0" mnemonicParsing="false" text="Alternativa A" />
+            <CheckBox fx:id="alternativaB" layoutX="25.0" layoutY="492.0" mnemonicParsing="false" text="Alternativa B" />
+            <CheckBox fx:id="alternativaC" layoutX="25.0" layoutY="540.0" mnemonicParsing="false" text="Alternativa C" />
+            <CheckBox fx:id="alternativaD" layoutX="25.0" layoutY="581.0" mnemonicParsing="false" text="Alternativa D" />
+            <CheckBox fx:id="alternativaE" layoutX="25.0" layoutY="623.0" mnemonicParsing="false" text="Alternativa E" />
 
-            <Button fx:id="btn_anterior" layoutX="630.0" layoutY="572.0" mnemonicParsing="false" onAction="#questaoAnterior" text="Anterior">
+            <Button fx:id="btn_anterior" layoutX="631.0" layoutY="611.0" mnemonicParsing="false" onAction="#questaoAnterior" text="Anterior">
               <cursor>
                 <Cursor fx:constant="HAND" />
               </cursor>
             </Button>
-            <Button fx:id="btn_proxima" layoutX="717.0" layoutY="572.0" mnemonicParsing="false" onAction="#proximaQuestao" text="Próxima">
+            <Button fx:id="btn_proxima" layoutX="718.0" layoutY="611.0" mnemonicParsing="false" onAction="#proximaQuestao" text="Próxima">
               <cursor>
                 <Cursor fx:constant="HAND" />
               </cursor>

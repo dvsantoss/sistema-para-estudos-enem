@@ -11,13 +11,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.text.Text;
 import br.ufrn.tads.model.*;
-import br.ufrn.tads.repository.imp.QuestionsDao;
 import br.ufrn.tads.servicy.imp.*;
 
 public class ResponderController {
 
     private List<Question> questoes = new ArrayList<>();
     private QuestoesServicy qs = new QuestoesServicy();
+    private Question q;
     private int indexAtual = 0;
     private static boolean provaGeral = true;
     private static String temaAtual;
@@ -108,7 +108,8 @@ public class ResponderController {
             return;
         }
 
-        Question q = questoes.get(idx);
+        q = questoes.get(idx);
+        System.out.println(q.getCorrectAlternative());
         
         contexto.setText(q.getTitle());
         conteudo.setText(q.getContext());
@@ -137,6 +138,8 @@ public class ResponderController {
 
     @FXML
     void proximaQuestao(ActionEvent event) {
+        System.out.println("acertou? "+acertouOuNao());
+        q.setAcertouOuNao(acertouOuNao());
         if (indexAtual < questoes.size() - 1) {
             indexAtual++;
             mostrarQuestao(indexAtual);
@@ -154,6 +157,7 @@ public class ResponderController {
     @FXML
     void menu_screen(ActionEvent event) throws IOException {
         App.setRoot("menuScreen");
+        qs.contagemDequestoes(questoes);
     }
 
     public static boolean isProvaGeral() {
@@ -170,5 +174,25 @@ public class ResponderController {
 
     public static void setTemaAtual(String temaAtual) {
         ResponderController.temaAtual = temaAtual;
+    }
+
+    public boolean acertouOuNao(){
+        if(alternativaA.isSelected() && "A".equals(q.getCorrectAlternative())){
+            return true;
+        }
+        else if(alternativaB.isSelected() && "B".equals(q.getCorrectAlternative())){
+            return true;
+        }
+        else if(alternativaC.isSelected() && "C".equals(q.getCorrectAlternative())){
+            return true;
+        }
+        else if(alternativaD.isSelected() && "D".equals(q.getCorrectAlternative())){
+            return true;
+        }
+        else if(alternativaE.isSelected() && "E".equals(q.getCorrectAlternative())){
+            return true;
+        }
+
+        return false;
     }
 }

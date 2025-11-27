@@ -3,19 +3,21 @@ package br.ufrn.tads.model;
 import java.util.List;
 
 public class Question {
-    public String title;
-    public int index;
-    public String discipline;
-    public String language;
-    public int year;
-    public String context;
-    public List<String> files;
-    public String correctAlternative;
-    public List<Alternative> alternatives;
-    public List<String> alternativesDoBd;
-    public List<String> topicos;
-    public String alternativesIntroduction;
+    private String title;
+    private int index;
+    private String discipline;
+    private String language;
+    private int year;
+    private String context;
+    private List<String> files;
+    private String correctAlternative;
+    private List<Alternative> alternatives;
+    private List<String> alternativesDoBd;
+    private List<String> topicos;
+    private String alternativesIntroduction;
     
+    //acertos e erros
+    private boolean acertouOuNao;
 
     public Question(){
         
@@ -116,6 +118,13 @@ public class Question {
     public void setAlternativesDoBd(List<String> alternativesDoBd) {
         this.alternativesDoBd = alternativesDoBd;
     }
+    public boolean isAcertouOuNao() {
+        return acertouOuNao;
+    }
+    public void setAcertouOuNao(boolean acertouOuNao) {
+        this.acertouOuNao = acertouOuNao;
+    }
+    
 }
 
 
