@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controllers.QuestoesController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="511.0" prefWidth="680.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Pane id="meuPane" layoutX="105.0" opacity="0.91" prefHeight="660.0" prefWidth="900.0" stylesheets="@style.css">
+                    <children>
+                        <Text fill="WHITE" fontSmoothingType="LCD" layoutX="245.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escolha uma das áreas abaixo:" textAlignment="CENTER" wrappingWidth="410.13677978515625">
+                            <font>
+                                <Font name="System Bold" size="25.0" />
+                            </font>
+                        </Text>
+                        <Button fx:id="btn_lct" layoutX="301.0" layoutY="203.0" mnemonicParsing="false" onAction="#lct_function" prefHeight="30.0" prefWidth="299.0" text="📚 Linguagens, Códigos e suas Tecnologias" />
+                        <Button fx:id="btn_cnt" layoutX="301.0" layoutY="251.0" mnemonicParsing="false" onAction="#cnt_function" prefHeight="30.0" prefWidth="299.0" text="🔬 Ciências da Natureza e suas Tecnologias" />
+                        <Button fx:id="btn_mt" layoutX="301.0" layoutY="300.0" mnemonicParsing="false" onAction="#mt_function" prefHeight="30.0" prefWidth="299.0" text="📈 Matemática e suas Tecnologias" />
+                        <Button fx:id="cht" layoutX="301.0" layoutY="348.0" mnemonicParsing="false" onAction="#cht_function" prefHeight="30.0" prefWidth="299.0" text="👨🏻‍🦳 Ciências Humanas e suas Tecnologias" />
+                    </children>
+                </Pane>
+                <Pane opacity="0.91" prefHeight="462.0" prefWidth="106.0" style="-fx-background-color: #1475f5;">
+                    <children>
+                        <AnchorPane layoutY="2.0" minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="106.0" style="-fx-background-color: white; -fx-border-color: #1475f5;">
+                            <children>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-fit-height: 30;">
+                                    <image>
+                                        <Image url="@../../../imgs/user_icon_149851.png" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="btn_menu" layoutX="6.0" layoutY="128.0" mnemonicParsing="false" onAction="#menu_screen" prefHeight="30.0" prefWidth="95.0" styleClass="meu-botao" stylesheets="@style.css" text="Menu">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="btn_provas" layoutX="6.0" layoutY="171.0" mnemonicParsing="false" onAction="#prova_screen" prefHeight="30.0" prefWidth="95.0" styleClass="meu-botao" stylesheets="@style.css" text="Provas">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="btn_questoes" layoutX="6.0" layoutY="212.0" mnemonicParsing="false" onAction="#questoes_screen" prefHeight="30.0" prefWidth="95.0" styleClass="meu-botao-ativado" stylesheets="@style.css" text="Questões">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="btn_calendario" layoutX="6.0" layoutY="251.0" mnemonicParsing="false" onAction="#calendario__screen" prefHeight="30.0" prefWidth="95.0" styleClass="meu-botao" stylesheets="@style.css" text="Calendario">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Button fx:id="btn_ajuda" layoutX="8.0" layoutY="305.0" mnemonicParsing="false" onAction="#ajuda_screen" prefHeight="30.0" prefWidth="91.0" styleClass="meu-botao" stylesheets="@style.css" text="Ajuda">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Button>
+                                <Text fx:id="nomeUser" layoutX="31.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
