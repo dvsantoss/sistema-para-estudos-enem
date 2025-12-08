@@ -244,8 +244,9 @@ public class ResponderController {
         Optional<ButtonType> result = alert.showAndWait();
         try {
             if (result.isPresent() && result.get() == ButtonType.OK) {
-                App.setRoot("menuScreen");
                 qs.contagemDequestoes(questoes);
+                App.setRoot("menuScreen");
+                
             } else {
                 App.setRoot("menuScreen");
             }
