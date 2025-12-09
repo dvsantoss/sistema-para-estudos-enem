@@ -22,30 +22,44 @@ import java.util.Optional;
 public class ProvaController {
 
     // menu lateral
-    @FXML private Button btn_menu;
-    @FXML private Button btn_provas;
-    @FXML private Button btn_questoes;
-    @FXML private Button btn_calendario;
-    @FXML private Button btn_ajuda;
-    @FXML private Text nomeUser;
+    @FXML
+    private Button btn_menu;
+
+    @FXML
+    private Button btn_provas;
+
+    @FXML
+    private Button btn_questoes;
+
+    @FXML
+    private Button btn_calendario;
+
+    @FXML
+    private Button btn_ajuda;
+
+    @FXML
+    private Text nomeUser;
 
     // método principal para abrir provas
     @FXML
     void abrirProva(ActionEvent event) {
         // identifica o ano pelo texto do botão clicado (ex: "2025")
         Button botaoClicado = (Button) event.getSource();
-        String ano = botaoClicado.getText(); // para puxar a string que é o titulo do botão clicado. por isso o titulo tem que ser o ano.
+        String ano = botaoClicado.getText(); // para puxar a string que é o titulo do botão clicado. por isso o titulo
+                                             // tem que ser o ano.
 
         // pergunta se é dia 1 ou dia 2
         String dia = perguntarUsuario("Qual o dia da prova?", "Dia 1", "Dia 2");
-        if (dia == null) return; // Se o usuário cancelar, para aqui.
+        if (dia == null)
+            return; // Se o usuário cancelar, para aqui.
 
         String numeroDia = dia.replace("Dia ", ""); // transforma "Dia 1" em "1"
 
         // pergunta a cor do caderno
         String cor = perguntarUsuario("Qual a cor do caderno?",
                 "Azul", "Amarelo", "Verde", "Laranja", "Roxo");
-        if (cor == null) return;
+        if (cor == null)
+            return;
 
         // busca o Link na lista de links usando switch
         String urlParaAbrir = obterUrlDoInep(ano, numeroDia, cor.toLowerCase());
@@ -62,7 +76,8 @@ public class ProvaController {
             ButtonType btnSim = new ButtonType("Sim, abrir prova");
             ButtonType btnNao = new ButtonType("Não, voltar", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-            confirmacao.getButtonTypes().setAll(btnSim, btnNao); // substitui os botões padrão para os botoes ficar com o titulo acima
+            confirmacao.getButtonTypes().setAll(btnSim, btnNao); // substitui os botões padrão para os botoes ficar com
+                                                                 // o titulo acima
 
             Optional<ButtonType> resultado = confirmacao.showAndWait();
 
@@ -83,28 +98,39 @@ public class ProvaController {
             // links do DIA 1 (2025)
             if (dia.equals("1")) {
                 switch (cor) {
-                    case "azul":    return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD1.pdf";
-                    case "amarelo": return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD2.pdf";
-                    case "verde":   return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD4.pdf";
-                    case "laranja": return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD9.pdf";
-                    case "roxo":    return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD10.pdf";
+                    case "azul":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD1.pdf";
+                    case "amarelo":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD2.pdf";
+                    case "verde":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD4.pdf";
+                    case "laranja":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD9.pdf";
+                    case "roxo":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D1_CD10.pdf";
                 }
             }
             // links do DIA 2 (2025)
             else if (dia.equals("2")) {
                 switch (cor) {
-                    case "amarelo": return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD5.pdf";
-                    case "azul":    return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD7.pdf";
-                    case "verde":   return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD8.pdf";
-                    case "laranja": return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD11.pdf";
-                    case "roxo":    return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD12.pdf";
+                    case "amarelo":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD5.pdf";
+                    case "azul":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD7.pdf";
+                    case "verde":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD8.pdf";
+                    case "laranja":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD11.pdf";
+                    case "roxo":
+                        return "https://download.inep.gov.br/enem/provas_e_gabaritos/2025_PV_impresso_D2_CD12.pdf";
                 }
             }
         }
         return null; // retorna null se não encontrar combinação
     }
 
-    // alguns metódos auxiliares para abrir navegador, perguntar usuário e mostrar erro
+    // alguns metódos auxiliares para abrir navegador, perguntar usuário e mostrar
+    // erro
 
     private void abrirNavegador(String url) {
         try {
@@ -120,11 +146,14 @@ public class ProvaController {
         }
     }
 
-    private String perguntarUsuario(String titulo, String... opcoes) { // método genérico para perguntar ao usuário (... para receber várias opções) Varargs
+    private String perguntarUsuario(String titulo, String... opcoes) { // método genérico para perguntar ao usuário (...
+                                                                       // para receber várias opções) Varargs
         List<String> listaOpcoes = new ArrayList<>();
-        for (String op : opcoes) listaOpcoes.add(op);
+        for (String op : opcoes)
+            listaOpcoes.add(op);
 
-        ChoiceDialog<String> dialog = new ChoiceDialog<>(listaOpcoes.get(0), listaOpcoes); // caixa de diálogo com opções recebidas
+        ChoiceDialog<String> dialog = new ChoiceDialog<>(listaOpcoes.get(0), listaOpcoes); // caixa de diálogo com
+                                                                                           // opções recebidas
         dialog.setTitle("Seleção de Prova");
         dialog.setHeaderText(titulo);// cabeçalho pode perguntar qual o dia ou qual a cor
         dialog.setContentText("Escolha uma opção:");
@@ -164,7 +193,7 @@ public class ProvaController {
     }
 
     @FXML
-    void ajuda_screen(ActionEvent event) throws IOException {
-        App.setRoot("ajudaScreen");
+    void ajuda_screen(ActionEvent event) throws IOException{
+        App.setRoot("ajuda_configScreen");
     }
 }
