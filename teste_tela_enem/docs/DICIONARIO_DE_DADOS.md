@@ -23,7 +23,7 @@
 
 ## 1. Tabela: Usuario
 
-**Descrição:** Armazena informações dos usuários do sistema, incluindo credenciais de acesso e estatísticas de desempenho nas questões do ENEM.
+**Descrição:** Armazena informações dos usuários do sistema, incluindo credenciais de acesso e os registros de desempenho do usuário nas questões do ENEM.
 
 **Nome da Tabela:** `Usuario`  
 **Sinonímia:** `users`, `usuarios`
@@ -294,6 +294,8 @@ quest_erradas: 7
 
 ## Relacionamentos
 
+**A estrutura de relacionamentos abaixo apresenta de forma resumida como as tabelas se conectam entre si.**
+
 ### Diagrama de Relacionamentos
 
 ```
@@ -518,7 +520,7 @@ CREATE TABLE user_stats_daily (
 
 | Data | Versão | Alteração | Autor |
 |------|--------|-----------|-------|
-| 2025 | 1.0 | Criação inicial do dicionário de dados | Sistema |
+| 2025 | 1.0 | Criação inicial do dicionário de dados | Gustavo Martins |
 
 ---
 
