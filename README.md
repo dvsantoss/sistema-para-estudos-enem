@@ -289,8 +289,8 @@ Para gerar os diagramas, acesse [PlantUML Online](http://www.plantuml.com/plantu
 
 
 **Desenvolvedores:**
-**Davi Santos e**
-**Gustavo Martins**
+[**Davi Santos e**](https://github.com/dvsantoss)
+[**Gustavo Martins**](https://github.com/gugucazhiz/ProjetoFinal)
 
 Somos do TADS/EAJ UFRN
 
