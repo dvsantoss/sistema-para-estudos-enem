@@ -23,7 +23,7 @@ Sistema educacional desenvolvido para auxiliar estudantes na preparação para o
 - **Acesso a Provas:** Links diretos para provas oficiais do INEP
 - **Gestão de Usuários:** Sistema de login e registro
 
-### Apresentação em formato de pitch PDF
+### Apresentação em formato de pitch PDF 📃
 
 - **Apresentação em formato de pitch PDF** [Veja aqui!](https://github.com/gugucazhiz/ProjetoFinal/blob/main/teste_tela_enem/docs/ArquivosApresentacao/apresentacao-pitch.pdf)
 
