@@ -129,7 +129,7 @@ java -jar target/teste_tela_enem-1.0-SNAPSHOT.jar
 
 O diagrama de classes apresenta a estrutura completa do sistema, mostrando todas as classes, seus atributos, métodos e relacionamentos.
 
-![Diagrama de Classes](<img width="1971" height="3023" alt="Image" src="https://github.com/user-attachments/assets/15b2f486-0c90-4e8a-af2e-02939baac342" />)
+<img width="1971" height="3023" alt="Image" src="https://github.com/user-attachments/assets/15b2f486-0c90-4e8a-af2e-02939baac342" />
 
 **Principais componentes:**
 - **Model:** User, Question, Alternative, Root, UserDailyStats
@@ -143,7 +143,7 @@ O diagrama de classes apresenta a estrutura completa do sistema, mostrando todas
 
 O diagrama de componentes mostra a arquitetura do sistema em alto nível, destacando as dependências entre os módulos.
 
-![Diagrama de Componentes](<img width="2024" height="1233" alt="Image" src="https://github.com/user-attachments/assets/5f72cf17-7ff3-401b-83d0-b3ead8645191" />)
+<img width="2024" height="1233" alt="Image" src="https://github.com/user-attachments/assets/5f72cf17-7ff3-401b-83d0-b3ead8645191" />
 
 **Camadas identificadas:**
 - **Frontend:** Interface JavaFX (FXML)
@@ -160,7 +160,7 @@ O diagrama de componentes mostra a arquitetura do sistema em alto nível, destac
 
 O diagrama DER representa a estrutura do banco de dados, mostrando as tabelas, seus campos e relacionamentos.
 
-![Diagrama DER](<img width="1379" height="753" alt="Image" src="https://github.com/user-attachments/assets/4041494c-3caf-4529-9446-186e98eb92a9" />)
+<img width="1379" height="753" alt="Image" src="https://github.com/user-attachments/assets/4041494c-3caf-4529-9446-186e98eb92a9" />
 
 **Entidades principais:**
 - `Usuario` - Dados dos usuários e estatísticas gerais
