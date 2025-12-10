@@ -5,12 +5,12 @@ Sistema desktop desenvolvido em JavaFX para prática de questões do ENEM, com a
 ## 📋 Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
+- [Apresentação Pitch PDF](#apresentação-em-formato-de-pitch-pdf-)
+- [Vídeo Com Pricipais Funcionalidades](#vídeo-de-apresentação-das-pricipais-funcionalidades-%EF%B8%8F)
 - [Tecnologias](#%EF%B8%8F-tecnologias)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Como Executar](#-como-executar)
 - [Diagramas UML](#-diagramas-uml)
-- [Apresentação Pitch](#apresentação-em-formato-de-pitch-pdf-)
-- [Vídeo Com Pricipais Funcionalidades](#vídeo-de-apresentação-das-pricipais-funcionalidades-%EF%B8%8F)
 - [Dicionário de Dados](#%EF%B8%8F-dicionário-de-dados)
 ---
 
@@ -24,6 +24,13 @@ Sistema educacional desenvolvido para auxiliar estudantes na preparação para o
 - **Acesso a Provas:** Links diretos para provas oficiais do INEP
 - **Gestão de Usuários:** Sistema de login e registro
 
+### Disciplinas Suportadas
+
+- **Ciências Humanas** (Questões 1-45)
+- **Ciências da Natureza** (Questões 46-90)
+- **Linguagens e Códigos** (Questões 91-135)
+- **Matemática** (Questões 136-180)
+
 ### Apresentação em formato de pitch PDF 📃
 
 - **Pitch em formato PDF reunindo as informações essenciais do projeto** [Veja aqui!](https://github.com/gugucazhiz/ProjetoFinal/blob/main/teste_tela_enem/docs/ArquivosApresentacao/apresentacao-pitch.pdf)
@@ -31,13 +38,6 @@ Sistema educacional desenvolvido para auxiliar estudantes na preparação para o
 ### Vídeo de apresentação das pricipais funcionalidades 📽️
 
 - **Visão rápida das principais funcionalidades e como elas funcionam na prática** [Assista aqui!](https://www.youtube.com/watch?v=MqjrqXF6gDE)
-
-### Disciplinas Suportadas
-
-- **Ciências Humanas** (Questões 1-45)
-- **Ciências da Natureza** (Questões 46-90)
-- **Linguagens e Códigos** (Questões 91-135)
-- **Matemática** (Questões 136-180)
 
 ---
 
