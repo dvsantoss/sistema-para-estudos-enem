@@ -9,7 +9,7 @@ Sistema desktop desenvolvido em JavaFX para prática de questões do ENEM, com a
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Como Executar](#-como-executar)
 - [Diagramas UML](#-diagramas-uml)
-- [Dicionário de Dados](#-dicionario-de-dados)
+- [Dicionário de Dados](#%EF%B8%8F-dicionário-de-dados)
 
 ---
 
